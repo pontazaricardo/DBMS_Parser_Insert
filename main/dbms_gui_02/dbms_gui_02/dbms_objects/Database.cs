@@ -8,7 +8,7 @@ using Exceptions;
 
 namespace dbms_objects
 {
-    class Database
+    public class Database
     {
         public string Name;
 

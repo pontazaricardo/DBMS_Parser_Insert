@@ -4,10 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using dbms_objects;
+
 namespace dbms_gui_02
 {
     static class Program
     {
+        public static Database database = new Database("dbms");
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
