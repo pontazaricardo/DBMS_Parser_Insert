@@ -248,11 +248,6 @@ namespace dbms_objects
                 }
             }
 
-            if (query.Contains("SELECT"))
-            {
-                //We first need to split into column names, tables and conditions
-                QueryDefragmenterString queryDefragmenter = new QueryDefragmenterString(query);
-            }
         }
 
     }
