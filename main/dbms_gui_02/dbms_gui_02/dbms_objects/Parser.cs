@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 using System.Text.RegularExpressions;
 
+
 using Exceptions;
 
 namespace dbms_objects
 {
-    class Parser
+    public class Parser
     {
+        public static Database database = new Database("dbms");
+
         public Parser()
         {
 
@@ -90,7 +93,7 @@ namespace dbms_objects
 
                     //At this point, we already have the table name, and parameters. We proceed to create
                     Table table = new Table(NameOfTable, parameters_name, parameters_type, parameters_primaryKeyBool);
-                    Program.database.AddTable(table);
+                    database.AddTable(table);
                 }
                 catch (InvalidTableCreationException e)
                 {
@@ -149,11 +152,11 @@ namespace dbms_objects
 
                     //We need to bring up the table with the same name
                     Table table = null;
-                    for (int j = 0; j < Program.database.listOfTables.Count(); j++)
+                    for (int j = 0; j < database.listOfTables.Count(); j++)
                     {
-                        if (Program.database.listOfTables[j].Name.Equals(NameOfTable))
+                        if (database.listOfTables[j].Name.Equals(NameOfTable))
                         {
-                            table = Program.database.listOfTables[j];
+                            table = database.listOfTables[j];
                             break;
                         }
                     }

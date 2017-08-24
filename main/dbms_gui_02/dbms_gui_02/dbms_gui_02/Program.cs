@@ -8,9 +8,9 @@ using dbms_objects;
 
 namespace dbms_gui_02
 {
-    static class Program
+    public static class Program
     {
-        public static Database database = new Database("dbms");
+        public static Parser parser = new Parser();
         
         /// <summary>
         /// The main entry point for the application.
