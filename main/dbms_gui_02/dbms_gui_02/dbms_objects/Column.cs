@@ -8,7 +8,7 @@ using Exceptions;
 
 namespace dbms_objects
 {
-    class Column
+    public class Column
     {
         public string Name;
         public string Type;
