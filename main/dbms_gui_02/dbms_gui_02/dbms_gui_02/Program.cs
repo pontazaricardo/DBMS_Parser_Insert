@@ -25,6 +25,7 @@ namespace dbms_gui_02
 
         /*
          * 
+            
             CREATE TABLE Student(studentId int PRIMARY KEY, name varchar(15), gender varchar(1), age int);
             CREATE TABLE Item itemID int, description varchar(20),);
             CREATE TABLE Vehicle (licenseNumber varchar(10),brand varchar(15),model varchar(15),type varchar(2),engineSize int);
