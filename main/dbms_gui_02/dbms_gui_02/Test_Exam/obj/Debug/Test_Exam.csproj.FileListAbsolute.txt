@@ -1,0 +1,6 @@
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\Test_Exam\bin\Debug\Test_Exam.exe.config
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\Test_Exam\bin\Debug\Test_Exam.exe
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\Test_Exam\bin\Debug\Test_Exam.pdb
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\Test_Exam\obj\Debug\Test_Exam.csprojResolveAssemblyReference.cache
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\Test_Exam\obj\Debug\Test_Exam.exe
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\Test_Exam\obj\Debug\Test_Exam.pdb

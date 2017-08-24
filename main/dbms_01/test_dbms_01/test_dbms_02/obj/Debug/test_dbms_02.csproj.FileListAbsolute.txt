@@ -1,8 +1,0 @@
-C:\VisualStudioWorkspace\dbms_01\test_dbms_01\test_dbms_02\bin\Debug\test_dbms_02.exe.config
-C:\VisualStudioWorkspace\dbms_01\test_dbms_01\test_dbms_02\bin\Debug\test_dbms_02.exe
-C:\VisualStudioWorkspace\dbms_01\test_dbms_01\test_dbms_02\bin\Debug\test_dbms_02.pdb
-C:\VisualStudioWorkspace\dbms_01\test_dbms_01\test_dbms_02\bin\Debug\Exceptions.exe
-C:\VisualStudioWorkspace\dbms_01\test_dbms_01\test_dbms_02\bin\Debug\Exceptions.pdb
-C:\VisualStudioWorkspace\dbms_01\test_dbms_01\test_dbms_02\obj\Debug\test_dbms_02.csprojResolveAssemblyReference.cache
-C:\VisualStudioWorkspace\dbms_01\test_dbms_01\test_dbms_02\obj\Debug\test_dbms_02.exe
-C:\VisualStudioWorkspace\dbms_01\test_dbms_01\test_dbms_02\obj\Debug\test_dbms_02.pdb

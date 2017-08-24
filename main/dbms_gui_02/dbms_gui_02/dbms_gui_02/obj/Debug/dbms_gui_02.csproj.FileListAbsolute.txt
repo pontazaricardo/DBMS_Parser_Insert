@@ -1,0 +1,11 @@
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\bin\Debug\dbms_gui_02.exe.config
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\bin\Debug\dbms_gui_02.exe
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\bin\Debug\dbms_gui_02.pdb
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\bin\Debug\Exceptions.dll
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\bin\Debug\Exceptions.pdb
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.csprojResolveAssemblyReference.cache
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.MainForm.resources
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.Properties.Resources.resources
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.csproj.GenerateResource.Cache
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.exe
+C:\VisualStudioWorkspace\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.pdb
