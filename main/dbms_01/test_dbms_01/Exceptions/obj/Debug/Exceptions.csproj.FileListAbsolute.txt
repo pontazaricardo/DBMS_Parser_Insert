@@ -1,0 +1,5 @@
+C:\VisualStudioWorkspace\dbms_01\test_dbms_01\Exceptions\bin\Debug\Exceptions.exe.config
+C:\VisualStudioWorkspace\dbms_01\test_dbms_01\Exceptions\bin\Debug\Exceptions.exe
+C:\VisualStudioWorkspace\dbms_01\test_dbms_01\Exceptions\bin\Debug\Exceptions.pdb
+C:\VisualStudioWorkspace\dbms_01\test_dbms_01\Exceptions\obj\Debug\Exceptions.exe
+C:\VisualStudioWorkspace\dbms_01\test_dbms_01\Exceptions\obj\Debug\Exceptions.pdb
