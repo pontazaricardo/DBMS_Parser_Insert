@@ -31,7 +31,16 @@ namespace dbms_objects_data
 
             for(int i = 0; i < listOfNames.Length; i++)
             {
-                table.Columns.Add(listOfNames[i], listOfTypes[i]);
+                try
+                {
+                    table.Columns.Add(listOfNames[i], listOfTypes[i]);
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+
+                    table = new DataTable();
+                    return false;
+                }
             }
 
             return true;
