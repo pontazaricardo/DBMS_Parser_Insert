@@ -23,6 +23,12 @@ namespace dbms_objects_data
             {
                 return false;
             }
+
+            if(listOfNames.Length != listOfTypes.Length)
+            {
+                return false;
+            }
+
             for(int i = 0; i < listOfNames.Length; i++)
             {
                 table.Columns.Add(listOfNames[i], listOfTypes[i]);
