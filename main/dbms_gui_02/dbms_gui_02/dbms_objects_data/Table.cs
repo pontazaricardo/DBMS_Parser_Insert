@@ -17,7 +17,7 @@ namespace dbms_objects_data
 
         }
 
-        public bool createTable(string[] listOfNames, Type[] listOfTypes)
+        public bool CreateTable(string[] listOfNames, Type[] listOfTypes)
         {
             if((listOfNames == null) || (listOfTypes == null))
             {
@@ -43,6 +43,20 @@ namespace dbms_objects_data
                 }
             }
 
+            return true;
+        }
+
+
+        public bool Insert(List<string> values, List<string> columns = null)
+        {
+            if((values == null) || (values.Count == 0))
+            {
+                return false;
+            }
+            if (columns!= null)
+            {
+
+            }
             return true;
         }
 
