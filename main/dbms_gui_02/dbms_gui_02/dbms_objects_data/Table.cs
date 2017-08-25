@@ -17,7 +17,7 @@ namespace dbms_objects_data
 
         }
 
-        public bool insertRows(string[] listOfNames, Type[] listOfTypes)
+        public bool createTable(string[] listOfNames, Type[] listOfTypes)
         {
             if((listOfNames == null) || (listOfTypes == null))
             {
