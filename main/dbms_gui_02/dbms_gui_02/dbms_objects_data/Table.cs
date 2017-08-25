@@ -55,7 +55,10 @@ namespace dbms_objects_data
             }
             if (columns!= null)
             {
-
+                if(values.Count != columns.Count)
+                {
+                    return false;
+                }
             }
             return true;
         }
