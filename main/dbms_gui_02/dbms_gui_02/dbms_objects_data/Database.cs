@@ -8,7 +8,9 @@ namespace dbms_objects_data
 {
     public sealed class Database
     {
-        public List<Table> tables;
+        public static List<Table> tables;
+        public static Dictionary<string, Table> dictionary;
+
 
         private static readonly object obj = new object();
         private static Database instance = null;
@@ -38,6 +40,7 @@ namespace dbms_objects_data
         private Database()
         {
             tables = new List<Table>();
+            dictionary = new Dictionary<string, Table>();
         }
 
         /// <summary>
@@ -57,6 +60,31 @@ namespace dbms_objects_data
             }
             catch(Exception e)
             {
+                return false;
+            }
+            return true;
+        }
+
+
+        public bool AddTable(string name, string[] columns, Type[] types)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                return false;
+            }
+
+            Table table = new Table();
+            if (!table.CreateTable(columns, types))
+            {
+                return false;
+            }
+            try
+            {
+                dictionary.Add(name, table);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
                 return false;
             }
             return true;
