@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace dbms_objects_data
 {
-    class Database
+    public class Database
     {
 
     }

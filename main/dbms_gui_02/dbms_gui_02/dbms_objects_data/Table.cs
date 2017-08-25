@@ -8,7 +8,7 @@ using System.Data;
 
 namespace dbms_objects_data
 {
-    class Table
+    public class Table
     {
         public DataTable table = new DataTable();
 
@@ -19,7 +19,9 @@ namespace dbms_objects_data
 
         public bool CreateTable(string[] listOfNames, Type[] listOfTypes)
         {
-            if((listOfNames == null) || (listOfTypes == null))
+            table = new DataTable();
+
+            if ((listOfNames == null) || (listOfTypes == null))
             {
                 return false;
             }
