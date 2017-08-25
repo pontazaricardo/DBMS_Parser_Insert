@@ -42,18 +42,24 @@ namespace dbms_objects_data
         }
 
         
-        public bool AddTable(string name, string[] columns, Type[] types)
+        public bool Create(string name, string[] columns, Type[] types)
         {
             if (string.IsNullOrEmpty(name))
             {
                 return false;
             }
+            if (dictionary.ContainsKey(name))
+            {
+                return false;
+            }
+
 
             Table table = new Table();
             if (!table.CreateTable(columns, types))
             {
                 return false;
             }
+
             try
             {
                 dictionary.Add(name, table);
@@ -63,6 +69,21 @@ namespace dbms_objects_data
                 Console.WriteLine(e.Message);
                 return false;
             }
+
+            return true;
+        }
+
+        public bool Insert(string name, List<string> values, List<string> columns = null)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                return false;
+            }
+            if (!dictionary.ContainsKey(name))
+            {
+                return false;
+            }
+
             return true;
         }
         
