@@ -8,7 +8,6 @@ namespace dbms_objects_data
 {
     public sealed class Database
     {
-        public static List<Table> tables;
         public static Dictionary<string, Table> dictionary;
 
 
@@ -39,33 +38,10 @@ namespace dbms_objects_data
 
         private Database()
         {
-            tables = new List<Table>();
             dictionary = new Dictionary<string, Table>();
         }
 
-        /// <summary>
-        /// Adds a given table to the database.
-        /// </summary>
-        /// <param name="table"></param>
-        /// <returns></returns>
-        public bool AddTable(Table table)
-        {
-            if(table == null)
-            {
-                return false;
-            }
-            try
-            {
-                tables.Add(table);
-            }
-            catch(Exception e)
-            {
-                return false;
-            }
-            return true;
-        }
-
-
+        
         public bool AddTable(string name, string[] columns, Type[] types)
         {
             if (string.IsNullOrEmpty(name))
