@@ -59,7 +59,42 @@ namespace dbms_objects_data
                 {
                     return false;
                 }
+            }else
+            {
+                //columns == null
+                if(values.Count != table.Columns.Count)
+                {
+                    return false;
+                }
             }
+
+            //At this point we insert a new row
+            try
+            {
+                DataRow row = table.NewRow();
+
+                if (columns == null)
+                {
+                    for (int i = 0; i < table.Columns.Count; i++)
+                    {
+                        row[table.Columns[i].ColumnName] = values[i];
+                    }
+                }else
+                {
+                    for(int i = 0; i < columns.Count; i++)
+                    {
+                        row[columns[i]] = values[i];
+                    }
+                }
+
+                table.Rows.Add(row);
+                table.AcceptChanges();
+
+            }catch(Exception e)
+            {
+                return false;
+            }
+
             return true;
         }
 
