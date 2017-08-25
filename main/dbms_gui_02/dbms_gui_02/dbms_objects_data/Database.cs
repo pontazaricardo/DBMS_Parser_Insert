@@ -13,6 +13,10 @@ namespace dbms_objects_data
         private static readonly object obj = new object();
         private static Database instance = null;
 
+
+        /// <summary>
+        /// Instance of the Database. We use the Singleton design pattern in case the GUI runs in multiple threads.
+        /// </summary>
         public static Database GetInstance
         {
             get
@@ -36,7 +40,11 @@ namespace dbms_objects_data
             tables = new List<Table>();
         }
 
-
+        /// <summary>
+        /// Adds a given table to the database.
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns></returns>
         public bool AddTable(Table table)
         {
             if(table == null)
