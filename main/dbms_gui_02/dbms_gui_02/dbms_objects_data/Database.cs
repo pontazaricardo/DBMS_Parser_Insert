@@ -10,7 +10,6 @@ namespace dbms_objects_data
     {
         public static Dictionary<string, Table> dictionary;
 
-
         private static readonly object obj = new object();
         private static Database instance = null;
 
@@ -84,7 +83,8 @@ namespace dbms_objects_data
                 return false;
             }
 
-            return true;
+            bool success = dictionary[name].Insert(values, columns);
+            return success;
         }
         
     }
