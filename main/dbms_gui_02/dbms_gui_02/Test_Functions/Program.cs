@@ -17,9 +17,14 @@ namespace Test_Functions
 
             Table table_test01 = new Table();
             bool isTableCreated_01 = table_test01.CreateTable(table01_columns, table01_types);
-        
 
+            List<string> values = new List<string>() { "1", "test", "lastnametest", "add1" };
+            bool inserted = table_test01.Insert(values);
 
+            List<string> values02 = new List<string>() { "2", "test02"};
+            List<string> values02_columns = new List<string>() { "id", "name" };
+
+            bool inserted02 = table_test01.Insert(values02, values02_columns);
 
         }
     }
