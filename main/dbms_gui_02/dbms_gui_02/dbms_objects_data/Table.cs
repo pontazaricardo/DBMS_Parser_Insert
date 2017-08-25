@@ -23,7 +23,10 @@ namespace dbms_objects_data
             {
                 return false;
             }
-
+            for(int i = 0; i < listOfNames.Length; i++)
+            {
+                table.Columns.Add(listOfNames[i], listOfTypes[i]);
+            }
 
             return true;
         }
