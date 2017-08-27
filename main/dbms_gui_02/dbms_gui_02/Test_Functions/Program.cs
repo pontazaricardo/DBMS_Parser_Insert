@@ -16,6 +16,7 @@ namespace Test_Functions
         {
             //TestDB();\
             TestRegex();
+            
 
         }
 
@@ -44,7 +45,7 @@ namespace Test_Functions
 
         static void TestRegex()
         {
-            string pattern = @"(?i)INSERT INTO (\S+)\s*(\S+)? VALUES \((\S+)\)";
+            string pattern = @"(?i)INSERT\s*INTO\s*(\S+)\s*(\S+)?\s*VALUES\s*\((\S+)\)";
             string input = @"INSErT INTO table_name (1,2,3) VALUES (1)";
 
             bool matchFound = false;
@@ -70,7 +71,26 @@ namespace Test_Functions
 
         static void TestRegex2()
         {
+            string pattern = @"(?i)CREATE\s*TABLE\s*(\S+)\s*\((\S+)\)";
+            string input = @"Create Table tabla1 (column1 int, column2 varchar)";
 
+            bool matchFound = false;
+
+            foreach (Match m in Regex.Matches(input, pattern))
+            {
+                Console.WriteLine("'{0}' found at index {1}.", m.Value, m.Index);
+                matchFound = true;
+            }
+
+            if (matchFound)
+            {
+                string[] matches = Regex.Split(input, pattern);
+                foreach (string match in matches)
+                {
+                    Console.WriteLine("'{0}'", match);
+                }
+
+            }
         }
 
     }
