@@ -72,7 +72,7 @@ namespace Test_Functions
 
         static void TestRegex2()
         {
-            string pattern = @"(?i)CREATE\s*TABLE\s*(\S+)\s*\((\S+)\)";
+            string pattern = @"(?i)CREATE\s*TABLE\s*(\S+)\s*\((.*)\)";
             string input = @"Create Table tabla1 (column1 int, column2 varchar)";
 
             bool matchFound = false;
