@@ -115,10 +115,15 @@ namespace Test_Functions
 
         }
 
-        static bool ParseCreateStatement(string str)
+        static bool ParseCreateStatement(Match[] matches)
         {
 
-            return true;
+            return false;
+        }
+
+        static bool ParseInsertStatement(Match[] matches)
+        {
+            return false;
         }
 
     }
