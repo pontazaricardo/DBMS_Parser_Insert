@@ -103,7 +103,15 @@ namespace Test_Functions
             string pattern_create = @"(?i)CREATE\s*TABLE\s*(\S+)\s*\((.*)\)";
             string pattern_insert = @"(?i)INSERT\s*INTO\s*(\S+)\s*(\S+)?\s*VALUES\s*\((\S+)\)";
 
-            return true;
+            if (Regex.Matches(query, pattern_create).Count > 0)
+            {
+                //We have a create query
+            }else if(Regex.Matches(query, pattern_insert).Count > 0)
+            {
+                //We have an insert query
+            }
+
+            return false; //There should be no other at the moment.
 
         }
 
