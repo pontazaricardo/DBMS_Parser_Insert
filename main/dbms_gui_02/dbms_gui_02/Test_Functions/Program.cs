@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Text.RegularExpressions;
+
 using dbms_objects_data;
 
 namespace Test_Functions
@@ -12,7 +14,8 @@ namespace Test_Functions
     {
         static void Main(string[] args)
         {
-            TestDB();
+            //TestDB();\
+            TestRegex();
 
         }
 
@@ -41,7 +44,13 @@ namespace Test_Functions
 
         static void TestRegex()
         {
+            string pattern = @"(?i)INSERT INTO (\S+)\s*(\S+)? VALUES \((\S+)\)";
+            string input = @"INSERT INTO table_name VALUES (1)";
 
+            foreach (Match m in Regex.Matches(input, pattern))
+            {
+                Console.WriteLine("'{0}' found at index {1}.", m.Value, m.Index);
+            }
         }
     }
 }
