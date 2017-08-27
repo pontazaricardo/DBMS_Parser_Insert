@@ -94,5 +94,11 @@ namespace Test_Functions
             }
         }
 
+        static bool ParseCreateStatement(string str)
+        {
+            
+            
+        }
+
     }
 }
