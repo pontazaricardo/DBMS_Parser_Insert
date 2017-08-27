@@ -39,5 +39,9 @@ namespace Test_Functions
             bool insertTest_04 = db.Insert("table02", values02, values02_columns);
         }
 
+        static void TestRegex()
+        {
+
+        }
     }
 }
