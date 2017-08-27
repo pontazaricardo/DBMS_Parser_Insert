@@ -12,12 +12,18 @@ namespace Test_Functions
     {
         static void Main(string[] args)
         {
+            TestDB();
+
+        }
+
+        static void TestDB()
+        {
             string[] table01_columns = new string[] { "id", "name", "last name", "address" };
             Type[] table01_types = new Type[] { typeof(int), typeof(string), typeof(string), typeof(string) };
-            
+
             List<string> values = new List<string>() { "1", "test", "lastnametest", "add1" };
-            
-            List<string> values02 = new List<string>() { "2", "test02"};
+
+            List<string> values02 = new List<string>() { "2", "test02" };
             List<string> values02_columns = new List<string>() { "id", "name" };
 
             Table table_test01 = new Table();
@@ -31,10 +37,7 @@ namespace Test_Functions
             bool insertTest_02 = db.Insert("table01", values);
             bool insertTest_03 = db.Insert("table01", values02, values02_columns);
             bool insertTest_04 = db.Insert("table02", values02, values02_columns);
-
-
-
-
         }
+
     }
 }
