@@ -15,8 +15,9 @@ namespace Test_Functions
         static void Main(string[] args)
         {
             //TestDB();\
-            TestRegex();
-            
+            //TestRegex();
+            TestRegex2();
+
 
         }
 
