@@ -47,10 +47,25 @@ namespace Test_Functions
             string pattern = @"(?i)INSERT INTO (\S+)\s*(\S+)? VALUES \((\S+)\)";
             string input = @"INSERT INTO table_name VALUES (1)";
 
+            bool matchFound = false;
+
             foreach (Match m in Regex.Matches(input, pattern))
             {
                 Console.WriteLine("'{0}' found at index {1}.", m.Value, m.Index);
+                matchFound = true;
             }
+
+            if (matchFound)
+            {
+                string[] matches = Regex.Split(input, pattern);
+                foreach (string match in matches)
+                {
+                    Console.WriteLine("'{0}'", match);
+                }
+
+            }
+           
+
         }
     }
 }
