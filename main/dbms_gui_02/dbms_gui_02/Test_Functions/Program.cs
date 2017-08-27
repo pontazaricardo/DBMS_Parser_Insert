@@ -94,10 +94,23 @@ namespace Test_Functions
             }
         }
 
+        public static bool ParseQuery(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                return false;
+            }
+            string pattern_create = @"(?i)CREATE\s*TABLE\s*(\S+)\s*\((.*)\)";
+            string pattern_insert = @"(?i)INSERT\s*INTO\s*(\S+)\s*(\S+)?\s*VALUES\s*\((\S+)\)";
+
+            return true;
+
+        }
+
         static bool ParseCreateStatement(string str)
         {
-            
-            
+
+            return true;
         }
 
     }
