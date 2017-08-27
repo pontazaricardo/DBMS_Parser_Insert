@@ -45,7 +45,7 @@ namespace Test_Functions
         static void TestRegex()
         {
             string pattern = @"(?i)INSERT INTO (\S+)\s*(\S+)? VALUES \((\S+)\)";
-            string input = @"INSERT INTO table_name VALUES (1)";
+            string input = @"INSErT INTO table_name (1,2,3) VALUES (1)";
 
             bool matchFound = false;
 
