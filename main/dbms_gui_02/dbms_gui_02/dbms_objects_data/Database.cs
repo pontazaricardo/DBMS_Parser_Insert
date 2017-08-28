@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Text.RegularExpressions;
+
 namespace dbms_objects_data
 {
     public sealed class Database
@@ -94,8 +96,55 @@ namespace dbms_objects_data
                 return false;
             }
 
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                return false;
+            }
+            string pattern_create = @"(?i)CREATE\s*TABLE\s*(\S+)\s*\((.*)\)";
+            string pattern_insert = @"(?i)INSERT\s*INTO\s*(\S+)\s*(\S+)?\s*VALUES\s*\((\S+)\)";
 
-            return true;
+            MatchCollection matches = null;
+
+            try
+            {
+                matches = Regex.Matches(query, pattern_create);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+            if (matches == null)
+            {
+                return false;
+            }
+
+            if (Regex.Matches(query, pattern_create).Count > 0)
+            {
+                //We have a create query
+                return ParseCreateStatement(matches);
+
+            }
+            else if (Regex.Matches(query, pattern_insert).Count > 0)
+            {
+                //We have an insert query
+                return ParseCreateStatement(matches);
+
+            }
+
+            return false; //There should be no other at the moment.
+        }
+
+
+        static bool ParseCreateStatement(MatchCollection matches)
+        {
+
+            return false;
+        }
+
+        static bool ParseInsertStatement(MatchCollection matches)
+        {
+            return false;
         }
 
     }
