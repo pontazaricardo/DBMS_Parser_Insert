@@ -87,5 +87,16 @@ namespace dbms_objects_data
             return success;
         }
         
+        public bool Parse(string query)
+        {
+            if(instance == null)
+            {
+                return false;
+            }
+
+
+            return true;
+        }
+
     }
 }
