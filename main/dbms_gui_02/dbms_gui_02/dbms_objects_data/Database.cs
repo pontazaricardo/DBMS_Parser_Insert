@@ -10,7 +10,10 @@ namespace dbms_objects_data
 {
     public sealed class Database
     {
-        public static Dictionary<string, Table> dictionary;
+        private static string pattern_create = @"(?i)CREATE\s*TABLE\s*(\S+)\s*\((.*)\)";
+        private static string pattern_insert = @"(?i)INSERT\s*INTO\s*(\S+)\s*(\S+)?\s*VALUES\s*\((\S+)\)";
+
+        private static Dictionary<string, Table> dictionary;
 
         private static readonly object obj = new object();
         private static Database instance = null;
@@ -100,8 +103,7 @@ namespace dbms_objects_data
             {
                 return false;
             }
-            string pattern_create = @"(?i)CREATE\s*TABLE\s*(\S+)\s*\((.*)\)";
-            string pattern_insert = @"(?i)INSERT\s*INTO\s*(\S+)\s*(\S+)?\s*VALUES\s*\((\S+)\)";
+            
 
             MatchCollection matches = null;
 
