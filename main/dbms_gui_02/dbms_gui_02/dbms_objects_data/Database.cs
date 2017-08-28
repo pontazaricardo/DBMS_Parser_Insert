@@ -52,7 +52,10 @@ namespace dbms_objects_data
 
         private void PopulateTypeDictionary()
         {
-
+            typesDictionary.Add("VARCHAR", typeof(string));
+            typesDictionary.Add("INT", typeof(int));
+            typesDictionary.Add("DATETIME", typeof(DateTime));
+            typesDictionary.Add("BOOL", typeof(bool));
         }
 
 
