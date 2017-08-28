@@ -147,6 +147,17 @@ namespace Test_Functions
             try
             {
                 string[] columnsDataSplit = columnsData.Split(',');
+                for(int i = 0; i < columnsDataSplit.Length; i++)
+                {
+                    string columnDataIndividual = columnsDataSplit[i];
+                    string[] data = columnDataIndividual.Split(' ');
+
+                    if((data == null) || (data.Length != 2))
+                    {
+                        return false;
+                    }
+                    
+                }
                 
             }catch(Exception e)
             {
