@@ -110,12 +110,14 @@ namespace Test_Functions
             if (Regex.Matches(query, pattern_create).Count > 0)
             {
                 //We have a create query
-                return ParseCreateStatement(Regex.Matches(query, pattern_create));
+                string[] matches = Regex.Split(query, pattern_create);
+                return ParseCreateStatement(matches);
 
             }else if(Regex.Matches(query, pattern_insert).Count > 0)
             {
                 //We have an insert query
-                return ParseCreateStatement(Regex.Matches(query, pattern_insert));
+                string[] matches = Regex.Split(query, pattern_insert);
+                return ParseCreateStatement(matches);
 
             }
 
@@ -123,13 +125,13 @@ namespace Test_Functions
 
         }
 
-        static bool ParseCreateStatement(MatchCollection matches)
+        static bool ParseCreateStatement(string[] matches)
         {
 
             return false;
         }
 
-        static bool ParseInsertStatement(MatchCollection matches)
+        static bool ParseInsertStatement(string[] matches)
         {
             return false;
         }
