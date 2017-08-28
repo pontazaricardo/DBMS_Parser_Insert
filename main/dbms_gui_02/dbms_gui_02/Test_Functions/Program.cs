@@ -132,6 +132,12 @@ namespace Test_Functions
                 //A standard creation query returns 4 matches (the first two empty)
                 return false;
             }
+            if((string.IsNullOrWhiteSpace(matches[2])) || (string.IsNullOrWhiteSpace(matches[3])))
+            {
+                //Cannot contain empty name or columns
+                return false;
+            }
+
             string tableName = matches[2];
             string columnsData = matches[3];
 
@@ -140,7 +146,8 @@ namespace Test_Functions
 
             try
             {
-
+                string[] columnsDataSplit = columnsData.Split(',');
+                
             }catch(Exception e)
             {
                 return false;
