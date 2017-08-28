@@ -127,7 +127,25 @@ namespace Test_Functions
 
         static bool ParseCreateStatement(string[] matches)
         {
+            if(matches.Length != 4)
+            {
+                //A standard creation query returns 4 matches (the first two empty)
+                return false;
+            }
+            string tableName = matches[2];
+            string columnsData = matches[3];
 
+            List<string> columns_names = new List<string>();
+            List<string> columns_types = new List<string>();
+
+            try
+            {
+
+            }catch(Exception e)
+            {
+                return false;
+            }
+            
             return false;
         }
 
