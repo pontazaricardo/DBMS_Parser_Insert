@@ -103,33 +103,19 @@ namespace dbms_objects_data
             {
                 return false;
             }
-            
 
-            MatchCollection matches = null;
-
-            try
-            {
-                matches = Regex.Matches(query, pattern_create);
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
-            if (matches == null)
-            {
-                return false;
-            }
 
             if (Regex.Matches(query, pattern_create).Count > 0)
             {
                 //We have a create query
+                string[] matches = Regex.Split(query, pattern_create);
                 return ParseCreateStatement(matches);
 
             }
             else if (Regex.Matches(query, pattern_insert).Count > 0)
             {
                 //We have an insert query
+                string[] matches = Regex.Split(query, pattern_insert);
                 return ParseCreateStatement(matches);
 
             }
@@ -138,13 +124,13 @@ namespace dbms_objects_data
         }
 
 
-        static bool ParseCreateStatement(MatchCollection matches)
+        private static bool ParseCreateStatement(string[] matches)
         {
 
             return false;
         }
 
-        static bool ParseInsertStatement(MatchCollection matches)
+        private static bool ParseInsertStatement(string[] matches)
         {
             return false;
         }
