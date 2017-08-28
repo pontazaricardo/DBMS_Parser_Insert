@@ -106,6 +106,9 @@ namespace Test_Functions
             {
                 return false;
             }
+
+            query = query.TrimStart().TrimEnd();
+
             string pattern_create = @"(?i)CREATE\s*TABLE\s*(\S+)\s*\((.*)\)";
             string pattern_insert = @"(?i)INSERT\s*INTO\s*(\S+)\s*(\S+)?\s*VALUES\s*\((\S+)\)";
 
