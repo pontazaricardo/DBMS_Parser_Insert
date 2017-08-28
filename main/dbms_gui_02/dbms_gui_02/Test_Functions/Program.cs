@@ -130,6 +130,11 @@ namespace Test_Functions
 
         }
 
+        /// <summary>
+        /// Creates a table in the database based on the matches of the Regex.
+        /// </summary>
+        /// <param name="matches"></param>
+        /// <returns></returns>
         static bool ParseCreateStatement(string[] matches)
         {
             if(matches.Length != 4)
