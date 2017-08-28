@@ -159,6 +159,8 @@ namespace Test_Functions
                         return false;
                     }
 
+                    data[1] = data[1].ToUpper();
+
                     //We now check if the type of column exist in the database dictionary
                     if (!Database.typesDictionary.ContainsKey(data[1]))
                     {
