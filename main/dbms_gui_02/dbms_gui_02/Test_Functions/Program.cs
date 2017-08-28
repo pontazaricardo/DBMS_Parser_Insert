@@ -134,14 +134,14 @@ namespace Test_Functions
                 //A standard creation query returns 4 matches (the first two empty)
                 return false;
             }
-            if((string.IsNullOrWhiteSpace(matches[2])) || (string.IsNullOrWhiteSpace(matches[3])))
+            if((string.IsNullOrWhiteSpace(matches[1])) || (string.IsNullOrWhiteSpace(matches[2])))
             {
                 //Cannot contain empty name or columns
                 return false;
             }
 
-            string tableName = matches[2];
-            string columnsData = matches[3];
+            string tableName = matches[1];
+            string columnsData = matches[2];
 
             List<string> columns_names = new List<string>();
             List<Type> columns_types = new List<Type>();
@@ -151,7 +151,7 @@ namespace Test_Functions
                 string[] columnsDataSplit = columnsData.Split(',');
                 for(int i = 0; i < columnsDataSplit.Length; i++)
                 {
-                    string columnDataIndividual = columnsDataSplit[i];
+                    string columnDataIndividual = columnsDataSplit[i].TrimStart().TrimEnd();
                     string[] data = columnDataIndividual.Split(' ');
 
                     if((data == null) || (data.Length != 2))
