@@ -14,7 +14,7 @@ namespace dbms_objects_data
         private static string pattern_insert = @"(?i)INSERT\s*INTO\s*(\S+)\s*(\S+)?\s*VALUES\s*\((\S+)\)";
 
         private static Dictionary<string, Table> dictionary;
-        private static Dictionary<string, Type> typesDictionary;
+        public static Dictionary<string, Type> typesDictionary;
 
         private static readonly object obj = new object();
         private static Database instance = null;
