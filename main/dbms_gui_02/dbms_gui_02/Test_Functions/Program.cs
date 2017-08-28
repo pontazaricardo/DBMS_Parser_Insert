@@ -12,6 +12,8 @@ namespace Test_Functions
 {
     class Program
     {
+        public static Database db = Database.GetInstance;
+
         static void Main(string[] args)
         {
             //TestDB();\
@@ -19,8 +21,8 @@ namespace Test_Functions
             //TestRegex2();
 
 
-            ParseQuery("Create Table tabla1 (column1 int, column2 varchar)");
-            ParseQuery("INSErT INTO table_name (1,2,3) VALUES (1)");
+            bool value1 = ParseQuery("Create Table tabla1 (column1 int, column2 varchar)");
+            bool value2 = ParseQuery("INSErT INTO table_name (1,2,3) VALUES (1)");
 
 
         }
@@ -41,7 +43,7 @@ namespace Test_Functions
 
             bool inserted02 = table_test01.Insert(values02, values02_columns);
 
-            Database db = Database.GetInstance;
+            
             bool isTableCreated_02 = db.Create("table01", table01_columns, table01_types);
             bool insertTest_02 = db.Insert("table01", values);
             bool insertTest_03 = db.Insert("table01", values02, values02_columns);
@@ -142,7 +144,7 @@ namespace Test_Functions
             string columnsData = matches[3];
 
             List<string> columns_names = new List<string>();
-            List<string> columns_types = new List<string>();
+            List<Type> columns_types = new List<Type>();
 
             try
             {
@@ -156,8 +158,18 @@ namespace Test_Functions
                     {
                         return false;
                     }
-                    
+
+                    //We now check if the type of column exist in the database dictionary
+                    if (!Database.typesDictionary.ContainsKey(data[1]))
+                    {
+                        return false;
+                    }
+
+                    columns_names.Add(data[0]);
+                    columns_types.Add(Database.typesDictionary[data[1]]);
                 }
+
+                return db.Create(tableName, columns_names.ToArray(), columns_types.ToArray());
                 
             }catch(Exception e)
             {
