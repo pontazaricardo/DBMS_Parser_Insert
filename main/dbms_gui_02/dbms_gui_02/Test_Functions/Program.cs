@@ -25,6 +25,11 @@ namespace Test_Functions
             bool value2 = ParseQuery("INSErT INTO table_name VALUES (1)");
             bool value3 = ParseQuery("INSErT INTO table_name (1,2,3) VALUES (1)");
 
+            bool value01 = ParseQuery("Create table table1 (id int, name varchar, lastname varchar)");
+            bool value02 = ParseQuery("Create table table2 (name2 varchar, age int, lastname2 varchar)");
+
+            bool value03 = ParseQuery("Insert into table1 values(1,'comida','bebida'");
+
 
         }
 
