@@ -196,6 +196,14 @@ namespace Test_Functions
             {
                 return false;
             }
+
+            string tableName = matches[1];
+
+            if (string.IsNullOrWhiteSpace(tableName))
+            {
+                return false;
+            }
+
             if(matches.Length == 4)
             {
 
