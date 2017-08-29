@@ -202,7 +202,11 @@ namespace Test_Functions
             if (string.IsNullOrWhiteSpace(tableName))
             {
                 return false;
+            }else
+            {
+                
             }
+
 
             if(matches.Length == 4)
             {

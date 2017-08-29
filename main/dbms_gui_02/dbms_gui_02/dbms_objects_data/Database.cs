@@ -13,7 +13,7 @@ namespace dbms_objects_data
         private static string pattern_create = @"(?i)CREATE\s*TABLE\s*(\S+)\s*\((.*)\)";
         private static string pattern_insert = @"(?i)INSERT\s*INTO\s*(\S+)\s*(\S+)?\s*VALUES\s*\((\S+)\)";
 
-        private static Dictionary<string, Table> dictionary;
+        private static Dictionary<string, Table> dictionary; //Dictionary that contains the table names and tables.
         public static Dictionary<string, Type> typesDictionary;
 
         private static readonly object obj = new object();
@@ -49,6 +49,18 @@ namespace dbms_objects_data
             PopulateTypeDictionary();
 
         }
+        
+        public bool ContainsTable(string tablename)
+        {
+            try
+            {
+                return dictionary.ContainsKey(tablename);
+            }catch(Exception e)
+            {
+                return false;
+            }
+        }
+
 
         private void PopulateTypeDictionary()
         {
