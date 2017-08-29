@@ -223,7 +223,8 @@ namespace Test_Functions
                 }
 
                 valuesList = TrimmedList(valuesList);
-                
+
+                return db.Insert(tableName, valuesList);
                 
             }else if(matches.Length == 5)
             {
