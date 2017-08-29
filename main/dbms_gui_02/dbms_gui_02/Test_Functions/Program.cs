@@ -222,7 +222,7 @@ namespace Test_Functions
                     return false;
                 }
 
-                
+                valuesList = TrimmedList(valuesList);
                 
                 
             }else if(matches.Length == 5)
