@@ -214,7 +214,11 @@ namespace Test_Functions
 
             if(matches.Length == 4)
             {
+                string values = matches[2];
+                List<string> valuesArray = values.Split(',').ToList();
+                
 
+                
             }else if(matches.Length == 5)
             {
 
