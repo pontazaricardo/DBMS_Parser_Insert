@@ -236,6 +236,11 @@ namespace Test_Functions
             return false;
         }
 
+        /// <summary>
+        /// Returns a copy list of the original one where all the leading and trailing white spaces were removed for each entry.
+        /// </summary>
+        /// <param name="originalList"></param>
+        /// <returns></returns>
         static List<string> TrimmedList(List<string> originalList)
         {
             List<string> result = new List<string>();
