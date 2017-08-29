@@ -21,8 +21,9 @@ namespace Test_Functions
             //TestRegex2();
 
 
-            bool value1 = ParseQuery("Create Table table_name (column1 int, column2 varchar)");
-            bool value2 = ParseQuery("INSErT INTO table_name (1,2,3) VALUES (1)");
+            //bool value1 = ParseQuery("Create Table table_name (column1 int, column2 varchar)");
+            bool value2 = ParseQuery("INSErT INTO table_name VALUES (1)");
+            bool value3 = ParseQuery("INSErT INTO table_name (1,2,3) VALUES (1)");
 
 
         }
@@ -194,6 +195,13 @@ namespace Test_Functions
             if ((matches == null) || (matches.Length<4) || (matches.Length > 5))
             {
                 return false;
+            }
+            if(matches.Length == 4)
+            {
+
+            }else if(matches.Length == 5)
+            {
+
             }
 
 
