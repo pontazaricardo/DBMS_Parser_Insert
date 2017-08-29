@@ -44,7 +44,7 @@ namespace Test_Functions
 
             bool inserted02 = table_test01.Insert(values02, values02_columns);
 
-            
+
             bool isTableCreated_02 = db.Create("table01", table01_columns, table01_types);
             bool insertTest_02 = db.Insert("table01", values);
             bool insertTest_03 = db.Insert("table01", values02, values02_columns);
@@ -73,7 +73,7 @@ namespace Test_Functions
                 }
 
             }
-           
+
 
         }
 
@@ -119,7 +119,8 @@ namespace Test_Functions
                 string[] matches = Regex.Split(query, pattern_create);
                 return ParseCreateStatement(matches);
 
-            }else if(Regex.Matches(query, pattern_insert).Count > 0)
+            }
+            else if (Regex.Matches(query, pattern_insert).Count > 0)
             {
                 //We have an insert query
                 string[] matches = Regex.Split(query, pattern_insert);
@@ -138,12 +139,12 @@ namespace Test_Functions
         /// <returns></returns>
         static bool ParseCreateStatement(string[] matches)
         {
-            if(matches.Length != 4)
+            if (matches.Length != 4)
             {
                 //A standard creation query returns 4 matches (the first two empty)
                 return false;
             }
-            if((string.IsNullOrWhiteSpace(matches[1])) || (string.IsNullOrWhiteSpace(matches[2])))
+            if ((string.IsNullOrWhiteSpace(matches[1])) || (string.IsNullOrWhiteSpace(matches[2])))
             {
                 //Cannot contain empty name or columns
                 return false;
@@ -158,12 +159,12 @@ namespace Test_Functions
             try
             {
                 string[] columnsDataSplit = columnsData.Split(',');
-                for(int i = 0; i < columnsDataSplit.Length; i++)
+                for (int i = 0; i < columnsDataSplit.Length; i++)
                 {
                     string columnDataIndividual = columnsDataSplit[i].TrimStart().TrimEnd();
                     string[] data = columnDataIndividual.Split(' ');
 
-                    if((data == null) || (data.Length != 2))
+                    if ((data == null) || (data.Length != 2))
                     {
                         return false;
                     }
@@ -181,18 +182,19 @@ namespace Test_Functions
                 }
 
                 return db.Create(tableName, columns_names.ToArray(), columns_types.ToArray());
-                
-            }catch(Exception e)
+
+            }
+            catch (Exception e)
             {
                 return false;
             }
-            
+
             return false;
         }
 
         static bool ParseInsertStatement(string[] matches)
         {
-            if ((matches == null) || (matches.Length<4) || (matches.Length > 5))
+            if ((matches == null) || (matches.Length < 4) || (matches.Length > 5))
             {
                 return false;
             }
@@ -202,7 +204,8 @@ namespace Test_Functions
             if (string.IsNullOrWhiteSpace(tableName))
             {
                 return false;
-            }else
+            }
+            else
             {
                 if (!db.ContainsTable(tableName)) //The database does not contain the table.
                 {
@@ -211,30 +214,44 @@ namespace Test_Functions
             }
 
             //At this point the database contains the tabel and the query is in the correct form. We proceed to parse.
-
-            if(matches.Length == 4)
+            try
             {
-                string values = matches[2];
-                List<string> valuesList = values.Split(',').ToList();
-                
-                if(valuesList.Count == 0)
+                if (matches.Length == 4)
                 {
-                    return false;
+                    string values = matches[2];
+                    List<string> valuesList = values.Split(',').ToList();
+
+                    if (valuesList.Count == 0)
+                    {
+                        return false;
+                    }
+
+                    valuesList = TrimmedList(valuesList);
+
+                    return db.Insert(tableName, valuesList);
+
                 }
+                else if (matches.Length == 5)
+                {
+                    string columns = matches[2];
+                    string values = matches[3];
 
-                valuesList = TrimmedList(valuesList);
+                    List<string> columnsList = columns.Split(',').ToList();
+                    List<string> valuesList = values.Split(',').ToList();
 
-                return db.Insert(tableName, valuesList);
-                
-            }else if(matches.Length == 5)
-            {
+                    if ((columnsList.Count == 0) || (valuesList.Count == 0))
+                    {
+                        return false;
+                    }
 
+                    columnsList = TrimmedList(columnsList);
+                    valuesList = TrimmedList(valuesList);
+               }
             }
-
-
-
-
-            return false;
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -246,7 +263,7 @@ namespace Test_Functions
         {
             List<string> result = new List<string>();
 
-            for(int i = 0; i < originalList.Count; i++)
+            for (int i = 0; i < originalList.Count; i++)
             {
                 string pivot = originalList[i].TrimStart().TrimEnd();
                 result.Add(pivot);
