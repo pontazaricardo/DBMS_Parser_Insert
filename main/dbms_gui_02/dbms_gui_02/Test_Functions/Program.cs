@@ -204,9 +204,13 @@ namespace Test_Functions
                 return false;
             }else
             {
-                
+                if (!db.ContainsTable(tableName)) //The database does not contain the table.
+                {
+                    return false;
+                }
             }
 
+            //At this point the database contains the tabel and the query is in the correct form. We proceed to parse.
 
             if(matches.Length == 4)
             {
