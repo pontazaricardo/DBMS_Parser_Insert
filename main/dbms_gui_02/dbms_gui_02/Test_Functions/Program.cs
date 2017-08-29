@@ -246,12 +246,16 @@ namespace Test_Functions
 
                     columnsList = TrimmedList(columnsList);
                     valuesList = TrimmedList(valuesList);
+
+                    return db.Insert(tableName, valuesList, columnsList);
                }
             }
             catch (Exception e)
             {
                 return false;
             }
+
+            return false;
         }
 
         /// <summary>
