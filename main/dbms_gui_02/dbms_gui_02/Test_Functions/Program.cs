@@ -191,6 +191,14 @@ namespace Test_Functions
 
         static bool ParseInsertStatement(string[] matches)
         {
+            if ((matches == null) || (matches.Length<4) || (matches.Length > 5))
+            {
+                return false;
+            }
+
+
+
+
             return false;
         }
 
