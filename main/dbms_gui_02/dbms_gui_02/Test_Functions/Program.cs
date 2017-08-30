@@ -287,7 +287,7 @@ namespace Test_Functions
 
             for(int i = 0; i < originalList.Count; i++)
             {
-                string pivot = originalList[i].Replace("\'","");
+                string pivot = originalList[i].Replace("'","");
                 result.Add(pivot);
             }
 
