@@ -27,11 +27,11 @@ namespace dbms_objects_data
         {
             get
             {
-                if(instance == null)
+                if (instance == null)
                 {
                     lock (obj)
                     {
-                        if(instance == null)
+                        if (instance == null)
                         {
                             instance = new Database();
                         }
@@ -49,13 +49,14 @@ namespace dbms_objects_data
             PopulateTypeDictionary();
 
         }
-        
+
         public bool ContainsTable(string tablename)
         {
             try
             {
                 return dictionary.ContainsKey(tablename);
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 return false;
             }
@@ -71,7 +72,7 @@ namespace dbms_objects_data
         }
 
 
-        
+
         public bool Create(string name, string[] columns, Type[] types)
         {
             if (string.IsNullOrEmpty(name))
@@ -94,7 +95,7 @@ namespace dbms_objects_data
             {
                 dictionary.Add(name, table);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return false;
@@ -117,10 +118,10 @@ namespace dbms_objects_data
             bool success = dictionary[name].Insert(values, columns);
             return success;
         }
-        
+
         public bool Parse(string query)
         {
-            if(instance == null)
+            if (instance == null)
             {
                 return false;
             }
@@ -208,9 +209,69 @@ namespace dbms_objects_data
             }
         }
 
-        private static bool ParseInsertStatement(string[] matches)
+        private bool ParseInsertStatement(string[] matches)
         {
-            return false;
+            if ((matches == null) || (matches.Length < 4) || (matches.Length > 5))
+            {
+                return false;
+            }
+
+            string tableName = matches[1];
+
+            if (string.IsNullOrWhiteSpace(tableName))
+            {
+                return false;
+            }
+            else
+            {
+                if (!instance.ContainsTable(tableName)) //The database does not contain the table.
+                {
+                    return false;
+                }
+            }
+
+            //At this point the database contains the tabel and the query is in the correct form. We proceed to parse.
+            try
+            {
+                if (matches.Length == 4)
+                {
+                    string values = matches[2];
+                    List<string> valuesList = values.Split(',').ToList();
+
+                    if (valuesList.Count == 0)
+                    {
+                        return false;
+                    }
+
+                    valuesList = TrimmedList(valuesList);
+
+                    return instance.Insert(tableName, valuesList);
+
+                }
+                else if (matches.Length == 5)
+                {
+                    string columns = matches[2];
+                    string values = matches[3];
+
+                    List<string> columnsList = columns.Split(',').ToList();
+                    List<string> valuesList = values.Split(',').ToList();
+
+                    if ((columnsList.Count == 0) || (valuesList.Count == 0))
+                    {
+                        return false;
+                    }
+
+                    columnsList = TrimmedList(columnsList);
+                    valuesList = RemoveApostrophes(TrimmedList(valuesList));
+
+                    return instance.Insert(tableName, valuesList, columnsList);
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
         }
 
     }
