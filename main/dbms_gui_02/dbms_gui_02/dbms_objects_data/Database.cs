@@ -292,5 +292,23 @@ namespace dbms_objects_data
             return result;
         }
 
+        /// <summary>
+        /// Eliminates the apostrophes in the varchar values.
+        /// </summary>
+        /// <param name="originalList"></param>
+        /// <returns></returns>
+        static List<string> RemoveApostrophes(List<string> originalList)
+        {
+            List<string> result = new List<string>();
+
+            for (int i = 0; i < originalList.Count; i++)
+            {
+                string pivot = originalList[i].Replace("'", "");
+                result.Add(pivot);
+            }
+
+            return result;
+        }
+
     }
 }
