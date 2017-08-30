@@ -150,10 +150,62 @@ namespace dbms_objects_data
         }
 
 
-        private static bool ParseCreateStatement(string[] matches)
+        /// <summary>
+        /// Creates a table in the database based on the matches of the Regex.
+        /// </summary>
+        /// <param name="matches"></param>
+        /// <returns></returns>
+        private bool ParseCreateStatement(string[] matches)
         {
+            if (matches.Length != 4)
+            {
+                //A standard creation query returns 4 matches (the first two empty)
+                return false;
+            }
+            if ((string.IsNullOrWhiteSpace(matches[1])) || (string.IsNullOrWhiteSpace(matches[2])))
+            {
+                //Cannot contain empty name or columns
+                return false;
+            }
 
-            return false;
+            string tableName = matches[1];
+            string columnsData = matches[2];
+
+            List<string> columns_names = new List<string>();
+            List<Type> columns_types = new List<Type>();
+
+            try
+            {
+                string[] columnsDataSplit = columnsData.Split(',');
+                for (int i = 0; i < columnsDataSplit.Length; i++)
+                {
+                    string columnDataIndividual = columnsDataSplit[i].TrimStart().TrimEnd();
+                    string[] data = columnDataIndividual.Split(' ');
+
+                    if ((data == null) || (data.Length != 2))
+                    {
+                        return false;
+                    }
+
+                    data[1] = data[1].ToUpper();
+
+                    //We now check if the type of column exist in the database dictionary
+                    if (!Database.typesDictionary.ContainsKey(data[1]))
+                    {
+                        return false;
+                    }
+
+                    columns_names.Add(data[0]);
+                    columns_types.Add(Database.typesDictionary[data[1]]);
+                }
+
+                return instance.Create(tableName, columns_names.ToArray(), columns_types.ToArray());
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         private static bool ParseInsertStatement(string[] matches)
