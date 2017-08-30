@@ -272,6 +272,7 @@ namespace dbms_objects_data
                 return false;
             }
 
+            return false;
         }
 
         /// <summary>
