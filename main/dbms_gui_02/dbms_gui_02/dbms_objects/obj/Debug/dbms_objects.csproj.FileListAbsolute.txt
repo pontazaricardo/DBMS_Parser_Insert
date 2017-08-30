@@ -1,0 +1,7 @@
+C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_objects\bin\Debug\dbms_objects.dll
+C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_objects\bin\Debug\dbms_objects.pdb
+C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_objects\bin\Debug\Exceptions.dll
+C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_objects\bin\Debug\Exceptions.pdb
+C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_objects\obj\Debug\dbms_objects.csprojResolveAssemblyReference.cache
+C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_objects\obj\Debug\dbms_objects.dll
+C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_objects\obj\Debug\dbms_objects.pdb
