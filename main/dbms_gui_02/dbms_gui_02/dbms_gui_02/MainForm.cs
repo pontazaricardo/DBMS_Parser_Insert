@@ -13,6 +13,8 @@ using System.Text.RegularExpressions;
 using Exceptions;
 using System.IO;
 
+using dbms_objects_data;
+
 namespace dbms_gui_02
 {
     public partial class MainForm : Form
@@ -23,8 +25,12 @@ namespace dbms_gui_02
         public DataColumn DatagridListOfTables_Column_Name = new DataColumn("Name");
         public List<string> ListOfTables = new List<string>();
 
+        private static Database db;
+
         public MainForm()
         {
+            db = Database.GetInstance;
+
             InitializeComponent();
 
             LoadTablesFromFileSystem();
@@ -102,6 +108,9 @@ namespace dbms_gui_02
                 for(int i = 0; i < listOfQueries.Count(); i++)
                 {
                     int counter = i + 1;
+
+
+
                     queryresultstable.Rows.Add(counter, listOfQueries[i], "Pending...");
                     
                     dataGridView1.Update();

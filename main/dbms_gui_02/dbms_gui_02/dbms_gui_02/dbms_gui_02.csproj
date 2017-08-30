@@ -82,9 +82,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dbms_objects\dbms_objects.csproj">
-      <Project>{2c391dde-4af8-4fab-8aed-f003f86b4fe4}</Project>
-      <Name>dbms_objects</Name>
+    <ProjectReference Include="..\dbms_objects_data\dbms_objects_data.csproj">
+      <Project>{5a6a121e-03f4-4636-a0d9-cd3f3d08ac3b}</Project>
+      <Name>dbms_objects_data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Exceptions\Exceptions.csproj">
       <Project>{f6bd06fb-6772-4d9e-8e10-d5113d822e15}</Project>
