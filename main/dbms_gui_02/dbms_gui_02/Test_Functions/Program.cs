@@ -281,6 +281,11 @@ namespace Test_Functions
             return result;
         }
 
+        /// <summary>
+        /// Eliminates the apostrophes in the varchar values.
+        /// </summary>
+        /// <param name="originalList"></param>
+        /// <returns></returns>
         static List<string> RemoveApostrophes(List<string> originalList)
         {
             List<string> result = new List<string>();
