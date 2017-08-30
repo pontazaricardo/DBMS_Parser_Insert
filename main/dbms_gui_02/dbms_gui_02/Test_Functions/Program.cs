@@ -250,7 +250,7 @@ namespace Test_Functions
                     }
 
                     columnsList = TrimmedList(columnsList);
-                    valuesList = TrimmedList(valuesList);
+                    valuesList = RemoveApostrophes(TrimmedList(valuesList));
 
                     return db.Insert(tableName, valuesList, columnsList);
                }
