@@ -281,5 +281,12 @@ namespace Test_Functions
             return result;
         }
 
+        static List<string> RemoveApostrophes(List<string> originalList)
+        {
+            List<string> result = new List<string>();
+
+            return result;
+        }
+
     }
 }
