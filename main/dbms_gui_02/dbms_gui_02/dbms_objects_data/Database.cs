@@ -143,7 +143,7 @@ namespace dbms_objects_data
             {
                 //We have an insert query
                 string[] matches = Regex.Split(query, pattern_insert);
-                return ParseCreateStatement(matches);
+                return ParseInsertStatement(matches);
 
             }
 
