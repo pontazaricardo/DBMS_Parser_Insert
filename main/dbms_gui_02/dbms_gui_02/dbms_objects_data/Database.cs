@@ -274,5 +274,23 @@ namespace dbms_objects_data
 
         }
 
+        /// <summary>
+        /// Returns a copy list of the original one where all the leading and trailing white spaces were removed for each entry.
+        /// </summary>
+        /// <param name="originalList"></param>
+        /// <returns></returns>
+        static List<string> TrimmedList(List<string> originalList)
+        {
+            List<string> result = new List<string>();
+
+            for (int i = 0; i < originalList.Count; i++)
+            {
+                string pivot = originalList[i].TrimStart().TrimEnd();
+                result.Add(pivot);
+            }
+
+            return result;
+        }
+
     }
 }
