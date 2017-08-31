@@ -113,12 +113,13 @@ namespace dbms_gui_02
                     int counter = i + 1;
                     bool result = db.Parse(listOfQueries[i]);
 
-                    if (i == 7)
+                    string resultDisplay = "Failed";
+                    if (result)
                     {
-                        Console.WriteLine("Hit");
+                        resultDisplay = "Success";
                     }
 
-                    queryresultstable.Rows.Add(counter, listOfQueries[i], result);
+                    queryresultstable.Rows.Add(counter, listOfQueries[i], resultDisplay);
                     
                     dataGridView1.Update();
                 }
