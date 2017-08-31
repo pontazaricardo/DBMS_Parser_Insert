@@ -69,6 +69,7 @@ namespace dbms_objects_data
             typesDictionary.Add("VARCHAR", typeof(string));
             typesDictionary.Add("INT", typeof(int));
             typesDictionary.Add("DATETIME", typeof(DateTime));
+            typesDictionary.Add("DATE", typeof(DateTime));
             typesDictionary.Add("BOOL", typeof(bool));
         }
 
