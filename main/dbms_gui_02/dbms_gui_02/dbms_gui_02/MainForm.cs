@@ -40,16 +40,15 @@ namespace dbms_gui_02
         {
             DatagridListOfTables = new DataTable("Tables");
             DatagridListOfTables_Column_Name = new DataColumn("Name");
+            DatagridListOfTables.Columns.Add(DatagridListOfTables_Column_Name);
 
             foreach (KeyValuePair<string, Table> pair in Database.dictionary)
             {
                 DatagridListOfTables.Rows.Add(pair.Key);
             }
 
-
-            DatagridListOfTables.Columns.Add(DatagridListOfTables_Column_Name);
+            
             dataGridView_tables.DataSource = DatagridListOfTables;
-
             dataGridView_tables.Update();
 
 
