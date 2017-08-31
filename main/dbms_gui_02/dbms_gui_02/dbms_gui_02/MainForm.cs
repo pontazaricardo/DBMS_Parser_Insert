@@ -108,7 +108,7 @@ namespace dbms_gui_02
                     int counter = i + 1;
                     bool result = db.Parse(listOfQueries[i]);
 
-                    if (i == 5)
+                    if (i == 7)
                     {
                         Console.WriteLine("Hit");
                     }
