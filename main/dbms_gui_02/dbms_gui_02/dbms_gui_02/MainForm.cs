@@ -44,14 +44,14 @@ namespace dbms_gui_02
 
 
 
-            string folderPath = ConfigurationManager.AppSettings["FolderDatabase"];
+            /*string folderPath = ConfigurationManager.AppSettings["FolderDatabase"];
             foreach(string file in Directory.EnumerateFiles(folderPath, "*.csv"))
             {
                 //string contents = File.ReadAllText(file);
                 string FileName = file.Replace(folderPath, "");
                 FileName = FileName.Replace(".csv", "");
                 ListOfTables.Add(FileName);
-            }
+            }*/
 
 
         }
