@@ -38,8 +38,18 @@ namespace dbms_gui_02
 
         public void LoadTablesFromFileSystem()
         {
+            DatagridListOfTables = new DataTable("Tables");
+            DatagridListOfTables_Column_Name = new DataColumn("Name");
+
+            foreach (KeyValuePair<string, Table> pair in Database.dictionary)
+            {
+                DatagridListOfTables.Rows.Add(pair.Key);
+            }
+
+
             DatagridListOfTables.Columns.Add(DatagridListOfTables_Column_Name);
             dataGridView_tables.DataSource = DatagridListOfTables;
+
             dataGridView_tables.Update();
 
 
@@ -64,12 +74,12 @@ namespace dbms_gui_02
 
         private void buttonClean_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         public void ParseQueries(string str)
@@ -101,7 +111,7 @@ namespace dbms_gui_02
             {
                 listOfQueries = str.Split(';').ToList();
 
-                for(int i = 0; i < listOfQueries.Count(); i++)
+                for (int i = 0; i < listOfQueries.Count(); i++)
                 {
                     if (string.IsNullOrWhiteSpace(listOfQueries[i]))
                     {
@@ -120,17 +130,18 @@ namespace dbms_gui_02
                     }
 
                     queryresultstable.Rows.Add(counter, listOfQueries[i], resultDisplay);
-                    
+
                     dataGridView1.Update();
                 }
 
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
 
             }
 
         }
-        
+
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -141,12 +152,16 @@ namespace dbms_gui_02
         {
             QueryUnparsed = richTextBox1.Text;
             ParseQueries(QueryUnparsed);
+
+            LoadTablesFromFileSystem();
         }
 
         private void toolStripButton_Clean_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
             richTextBox1.Focus();
+
+            LoadTablesFromFileSystem();
         }
     }
 }
