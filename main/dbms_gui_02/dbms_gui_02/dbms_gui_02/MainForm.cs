@@ -108,6 +108,11 @@ namespace dbms_gui_02
                     int counter = i + 1;
                     bool result = db.Parse(listOfQueries[i]);
 
+                    if (i == 5)
+                    {
+                        Console.WriteLine("Hit");
+                    }
+
                     queryresultstable.Rows.Add(counter, listOfQueries[i], result);
                     
                     dataGridView1.Update();
