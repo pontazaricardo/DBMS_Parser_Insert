@@ -100,13 +100,11 @@ namespace dbms_gui_02
             try
             {
                 listOfQueries = str.Split(';').ToList();
-                for(int i = 0; i < listOfQueries.Count(); i++)
-                {
-                    listOfQueries[i] = listOfQueries[i].Trim();
-                }
 
                 for(int i = 0; i < listOfQueries.Count(); i++)
                 {
+                    listOfQueries[i] = listOfQueries[i].Trim();
+
                     int counter = i + 1;
                     bool result = db.Parse(listOfQueries[i]);
 
