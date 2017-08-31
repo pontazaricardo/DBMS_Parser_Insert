@@ -22,11 +22,11 @@ namespace dbms_gui_02
         /*
          * 
             
-            CREATE TABLE Student(studentId int PRIMARY KEY, name varchar(15), gender varchar(1), age int);
-            CREATE TABLE Item itemID int, description varchar(20),);
-            CREATE TABLE Vehicle (licenseNumber varchar(10),brand varchar(15),model varchar(15),type varchar(2),engineSize int);
-            CREATE TABLE Course (courseName varchar(20),startingDate date,teacherName varchar(20));
-            CREATE TABLE Book (isbn varchar(20) PRIMARY KEY,title varchar(20),author varchar(20),pages int,editorial varchar(15));
+            CREATE TABLE Student(studentId int, name varchar, gender varchar, age int);
+            CREATE TABLE Item itemID int, description varchar,);
+            CREATE TABLE Vehicle (licenseNumber varchar,brand varchar,model varchar,type varchar,engineSize int);
+            CREATE TABLE Course (courseName varchar,startingDate date,teacherName varchar);
+            CREATE TABLE Book (isbn varchar,title varchar,author varchar,pages int,editorial varchar);
             INSERT INTO Student VALUES(10, 'John Smith', 'M', 22);
             INSERT INTO Student VALUES(11, 'Hsu You-Ting', 'F', 23);
             INSERT INTO Student(name, age, studentId, gender) VALUES('Ai Toshiko', 21, 12, 'F');
