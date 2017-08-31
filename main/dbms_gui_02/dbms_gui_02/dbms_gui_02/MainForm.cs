@@ -108,10 +108,9 @@ namespace dbms_gui_02
                 for(int i = 0; i < listOfQueries.Count(); i++)
                 {
                     int counter = i + 1;
+                    bool result = db.Parse(listOfQueries[i]);
 
-
-
-                    queryresultstable.Rows.Add(counter, listOfQueries[i], "Pending...");
+                    queryresultstable.Rows.Add(counter, listOfQueries[i], result);
                     
                     dataGridView1.Update();
                 }
@@ -120,6 +119,7 @@ namespace dbms_gui_02
             {
 
             }
+
         }
         
 
