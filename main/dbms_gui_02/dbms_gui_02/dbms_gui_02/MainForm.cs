@@ -103,6 +103,11 @@ namespace dbms_gui_02
 
                 for(int i = 0; i < listOfQueries.Count(); i++)
                 {
+                    if (string.IsNullOrWhiteSpace(listOfQueries[i]))
+                    {
+                        continue;
+                    }
+
                     listOfQueries[i] = listOfQueries[i].Trim();
 
                     int counter = i + 1;
