@@ -167,12 +167,21 @@ namespace dbms_gui_02
         {
             DataGridViewCell cell = (DataGridViewCell)dataGridView_tables.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-            if (cell.Value != "")
+            try
             {
-                TableForm tableForm = new TableForm();
-                tableForm.Show();
+                string cellValue = Convert.ToString(cell.Value);
+                if (string.IsNullOrWhiteSpace(cellValue))
+                {
+                    if (db.ContainsTable(cellValue))
+                    {
+                        TableForm tableForm = new TableForm(Database.dictionary[cellValue].table);
+                        tableForm.Show();
+                    }
+                }
+            }catch(Exception e1)
+            {
+
             }
-            
         }
     }
 }
