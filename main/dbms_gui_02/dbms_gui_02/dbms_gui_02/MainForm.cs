@@ -170,7 +170,7 @@ namespace dbms_gui_02
             try
             {
                 string cellValue = Convert.ToString(cell.Value);
-                if (string.IsNullOrWhiteSpace(cellValue))
+                if (!string.IsNullOrWhiteSpace(cellValue))
                 {
                     if (db.ContainsTable(cellValue))
                     {
