@@ -47,7 +47,7 @@ namespace dbms_gui_02
                 DatagridListOfTables.Rows.Add(pair.Key);
             }
 
-            
+
             dataGridView_tables.DataSource = DatagridListOfTables;
             dataGridView_tables.Update();
 
@@ -140,7 +140,7 @@ namespace dbms_gui_02
             }
 
         }
-
+        
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -161,6 +161,17 @@ namespace dbms_gui_02
             richTextBox1.Focus();
 
             LoadTablesFromFileSystem();
+        }
+
+        private void dataGridView_tables_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCell cell = (DataGridViewCell)dataGridView_tables.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+            if (cell.Value != "")
+            {
+                
+            }
+            
         }
     }
 }

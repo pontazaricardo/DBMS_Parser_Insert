@@ -87,10 +87,12 @@
             this.dataGridView_tables.AllowUserToAddRows = false;
             this.dataGridView_tables.AllowUserToDeleteRows = false;
             this.dataGridView_tables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_tables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView_tables.Location = new System.Drawing.Point(12, 41);
             this.dataGridView_tables.Name = "dataGridView_tables";
             this.dataGridView_tables.Size = new System.Drawing.Size(162, 525);
             this.dataGridView_tables.TabIndex = 6;
+            this.dataGridView_tables.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_tables_CellContentClick);
             // 
             // label3
             // 
