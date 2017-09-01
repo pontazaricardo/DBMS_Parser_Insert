@@ -170,6 +170,7 @@ namespace dbms_gui_02
             if (cell.Value != "")
             {
                 TableForm tableForm = new TableForm();
+                tableForm.Show();
             }
             
         }

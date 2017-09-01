@@ -19,7 +19,7 @@ C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02
 C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.csprojResolveAssemblyReference.cache
 C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.MainForm.resources
 C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.Properties.Resources.resources
+C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.TableForm.resources
 C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.csproj.GenerateResource.Cache
 C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.exe
 C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.pdb
-C:\Users\liwuen\Documents\GitHub\DBMS_Parser_Insert\main\dbms_gui_02\dbms_gui_02\dbms_gui_02\obj\Debug\dbms_gui_02.TableForm.resources
