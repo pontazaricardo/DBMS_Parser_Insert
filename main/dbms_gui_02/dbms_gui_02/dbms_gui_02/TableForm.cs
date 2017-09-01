@@ -16,5 +16,10 @@ namespace dbms_gui_02
         {
             InitializeComponent();
         }
+
+        private void TableForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
