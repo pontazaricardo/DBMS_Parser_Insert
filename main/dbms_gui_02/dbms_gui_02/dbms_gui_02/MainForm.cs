@@ -174,7 +174,7 @@ namespace dbms_gui_02
                 {
                     if (db.ContainsTable(cellValue))
                     {
-                        TableForm tableForm = new TableForm(Database.dictionary[cellValue].table);
+                        TableForm tableForm = new TableForm(Database.dictionary[cellValue].table, "Table: " + cellValue);
                         tableForm.Show();
                     }
                 }

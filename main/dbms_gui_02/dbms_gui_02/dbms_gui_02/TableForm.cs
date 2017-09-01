@@ -12,11 +12,12 @@ namespace dbms_gui_02
 {
     public partial class TableForm : Form
     {
-        public TableForm(DataTable dataTable)
+        public TableForm(DataTable dataTable, string title)
         {
             InitializeComponent();
             dataGridView1.DataSource = dataTable;
             dataGridView1.Update();
+            Text = title;
         }
 
         private void TableForm_Load(object sender, EventArgs e)
