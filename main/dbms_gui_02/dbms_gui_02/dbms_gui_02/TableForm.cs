@@ -21,5 +21,10 @@ namespace dbms_gui_02
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
