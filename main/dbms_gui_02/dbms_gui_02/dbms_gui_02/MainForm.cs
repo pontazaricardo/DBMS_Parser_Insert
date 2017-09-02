@@ -49,19 +49,6 @@ namespace dbms_gui_02
 
             dataGridView_tables.DataSource = DatagridListOfTables;
             dataGridView_tables.Update();
-
-
-
-            /*string folderPath = ConfigurationManager.AppSettings["FolderDatabase"];
-            foreach(string file in Directory.EnumerateFiles(folderPath, "*.csv"))
-            {
-                //string contents = File.ReadAllText(file);
-                string FileName = file.Replace(folderPath, "");
-                FileName = FileName.Replace(".csv", "");
-                ListOfTables.Add(FileName);
-            }*/
-
-
         }
 
 
@@ -179,7 +166,7 @@ namespace dbms_gui_02
                 }
             }catch(Exception e1)
             {
-
+                //Fade silently
             }
         }
 
