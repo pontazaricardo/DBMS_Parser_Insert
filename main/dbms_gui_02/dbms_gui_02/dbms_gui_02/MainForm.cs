@@ -183,5 +183,24 @@ namespace dbms_gui_02
 
             }
         }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            string examplequeries = 
+                "CREATE TABLE Student(studentId int, name varchar, gender varchar, age int);\n" +
+                "CREATE TABLE Item itemID int, description varchar,);\n" +
+                "CREATE TABLE Vehicle(licenseNumber varchar, brand varchar, model varchar, type varchar, engineSize int);\n" +
+                "CREATE TABLE Course(courseName varchar, startingDate date, teacherName varchar);\n" +
+                "CREATE TABLE Book(isbn varchar, title varchar, author varchar, pages int, editorial varchar);\n" +
+                "INSERT INTO Student VALUES(10, 'John Smith', 'M', 22);\n" +
+                "INSERT INTO Student VALUES(11, 'Hsu You-Ting', 'F', 23);\n" +
+                "INSERT INTO Student(name, age, studentId, gender) VALUES('Ai Toshiko', 21, 12, 'F');\n" +
+                "INSERT INTO Student(age, studentId, gender, name) VALUES(20, 13, 'M', 'Fernando Sierra');\n" +
+                "INSERT INTO Student VALUES(14, 'Mohammed Ali', 'M', 25);\n" +
+                "INSERT INTO Student VALUES(10, 'Huang Hao-Wei', 'M', 26);\n" +
+                "INSERT INTO Book VALUES(12345, 'Romeo and Juliet', 'Shakespeare', 'Hello', 'Prentice Hall');";
+            richTextBox1.Text = examplequeries;
+
+        }
     }
 }
