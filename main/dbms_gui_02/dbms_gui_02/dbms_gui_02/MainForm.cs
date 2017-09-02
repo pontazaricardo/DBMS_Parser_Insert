@@ -35,6 +35,9 @@ namespace dbms_gui_02
             LoadTablesFromFileSystem();
         }
 
+        /// <summary>
+        /// After inserting the data in the tables, it updates the left window to display the actual tables and data.
+        /// </summary>
         public void LoadTablesFromFileSystem()
         {
             DatagridListOfTables = new DataTable("Tables");
@@ -45,8 +48,6 @@ namespace dbms_gui_02
             {
                 DatagridListOfTables.Rows.Add(pair.Key);
             }
-
-
             dataGridView_tables.DataSource = DatagridListOfTables;
             dataGridView_tables.Update();
         }
@@ -67,6 +68,10 @@ namespace dbms_gui_02
 
         }
 
+        /// <summary>
+        /// Parses all the queries in a list of queries and executes them.
+        /// </summary>
+        /// <param name="str"></param>
         public void ParseQueries(string str)
         {
             while (str.Contains("  "))
@@ -133,6 +138,11 @@ namespace dbms_gui_02
 
         }
 
+        /// <summary>
+        /// Executes the queries in the main window and outputs the results in the lower window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             QueryUnparsed = richTextBox1.Text;
@@ -141,6 +151,11 @@ namespace dbms_gui_02
             LoadTablesFromFileSystem();
         }
 
+        /// <summary>
+        /// Cleans the main window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButton_Clean_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
@@ -148,6 +163,7 @@ namespace dbms_gui_02
 
             LoadTablesFromFileSystem();
         }
+
 
         private void dataGridView_tables_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
