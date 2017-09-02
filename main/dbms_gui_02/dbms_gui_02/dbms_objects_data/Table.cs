@@ -17,6 +17,12 @@ namespace dbms_objects_data
 
         }
 
+        /// <summary>
+        /// Creates a Table object based on the columns names and types. Returns true if the creation was successful and false if there is an error.
+        /// </summary>
+        /// <param name="listOfNames"></param>
+        /// <param name="listOfTypes"></param>
+        /// <returns></returns>
         public bool CreateTable(string[] listOfNames, Type[] listOfTypes)
         {
             table = new DataTable();
@@ -48,7 +54,12 @@ namespace dbms_objects_data
             return true;
         }
 
-
+        /// <summary>
+        /// Inserts the data in the given columns. Returns true if the data was inserted successfully and false otherwise.
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="columns"></param>
+        /// <returns></returns>
         public bool Insert(List<string> values, List<string> columns = null)
         {
             if((values == null) || (values.Count == 0))
