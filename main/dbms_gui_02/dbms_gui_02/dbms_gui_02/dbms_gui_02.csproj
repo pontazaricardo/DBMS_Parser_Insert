@@ -96,10 +96,6 @@
       <Project>{5a6a121e-03f4-4636-a0d9-cd3f3d08ac3b}</Project>
       <Name>dbms_objects_data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
-      <Project>{f6bd06fb-6772-4d9e-8e10-d5113d822e15}</Project>
-      <Name>Exceptions</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="179530.png" />

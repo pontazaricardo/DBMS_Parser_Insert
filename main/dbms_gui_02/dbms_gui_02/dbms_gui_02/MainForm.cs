@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Text.RegularExpressions;
-using Exceptions;
 using System.IO;
 
 using dbms_objects_data;
