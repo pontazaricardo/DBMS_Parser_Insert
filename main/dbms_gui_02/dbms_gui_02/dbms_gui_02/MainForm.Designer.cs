@@ -107,9 +107,9 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
             this.toolStripButton_Run,
-            this.toolStripButton_Clean,
-            this.toolStripButton1});
+            this.toolStripButton_Clean});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(856, 25);
@@ -124,6 +124,7 @@
             this.toolStripButton_Run.Name = "toolStripButton_Run";
             this.toolStripButton_Run.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton_Run.Text = "Run";
+            this.toolStripButton_Run.ToolTipText = "Execute the queries in the main window.";
             this.toolStripButton_Run.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton_Clean
@@ -134,6 +135,7 @@
             this.toolStripButton_Clean.Name = "toolStripButton_Clean";
             this.toolStripButton_Clean.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton_Clean.Text = "Clean";
+            this.toolStripButton_Clean.ToolTipText = "Clean the main window commands.";
             this.toolStripButton_Clean.Click += new System.EventHandler(this.toolStripButton_Clean_Click);
             // 
             // toolStripButton1
@@ -144,6 +146,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.ToolTipText = "Load a sample set of queries.";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // MainForm
