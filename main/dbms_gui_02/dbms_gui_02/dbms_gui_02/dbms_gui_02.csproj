@@ -104,6 +104,9 @@
   <ItemGroup>
     <Content Include="179530.png" />
     <Content Include="222506.png" />
+    <Content Include="QueriesExample.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\pad.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
