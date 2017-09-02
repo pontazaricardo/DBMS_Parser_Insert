@@ -186,7 +186,7 @@ namespace dbms_gui_02
 
         private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
-            string examplequeries = 
+            /*string examplequeries = 
                 "CREATE TABLE Student(studentId int, name varchar, gender varchar, age int);\n" +
                 "CREATE TABLE Item itemID int, description varchar,);\n" +
                 "CREATE TABLE Vehicle(licenseNumber varchar, brand varchar, model varchar, type varchar, engineSize int);\n" +
@@ -198,7 +198,9 @@ namespace dbms_gui_02
                 "INSERT INTO Student(age, studentId, gender, name) VALUES(20, 13, 'M', 'Fernando Sierra');\n" +
                 "INSERT INTO Student VALUES(14, 'Mohammed Ali', 'M', 25);\n" +
                 "INSERT INTO Student VALUES(10, 'Huang Hao-Wei', 'M', 26);\n" +
-                "INSERT INTO Book VALUES(12345, 'Romeo and Juliet', 'Shakespeare', 'Hello', 'Prentice Hall');";
+                "INSERT INTO Book VALUES(12345, 'Romeo and Juliet', 'Shakespeare', 'Hello', 'Prentice Hall');";*/
+
+            string examplequeries = System.IO.File.ReadAllText(@"QueriesExample.txt");
             richTextBox1.Text = examplequeries;
 
         }
