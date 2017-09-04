@@ -28,3 +28,6 @@ INSERT INTO tweets VALUES (185437272,'Damn its incredibl','Aug  3 2007 10:50PM',
 INSERT INTO tweets VALUES (203133822,'Im trying NOT to pr','Aug 13 2007  9:44AM','Hsinchu' ,811883) ;
 INSERT INTO tweets VALUES (278146952,'wondering what big p','Sep 19 2007  2:58AM','Hsinchu' ,8055532) ;
 ```
+or just click the **Load sample queries** button to load a list of queries already preloaded in the project.
+
+![demo01](/images/gif_01.gif)
