@@ -41,5 +41,41 @@ Inside the project, there is a **QueriesExample.txt**. If you want to modify the
 ## Code
 
 This project creates a custom *Table* object that uses a *DataTable* as a datastructure and has two additional functions.
+```c#
+/// <summary>
+/// Creates a Table object based on the columns names and types. Returns true if the creation was successful and false if there is an error.
+/// </summary>
+/// <param name="listOfNames"></param>
+/// <param name="listOfTypes"></param>
+/// <returns></returns>
+public bool CreateTable(string[] listOfNames, Type[] listOfTypes)
+{
+	table = new DataTable();
+	if ((listOfNames == null) || (listOfTypes == null))
+	{
+		return false;
+	}
 
+	if(listOfNames.Length != listOfTypes.Length)
+	{
+		return false;
+	}
 
+	for(int i = 0; i < listOfNames.Length; i++)
+	{
+		try
+		{
+			table.Columns.Add(listOfNames[i], listOfTypes[i]);
+		}
+		catch(Exception e)
+		{
+			Console.WriteLine(e.Message);
+
+			table = new DataTable();
+			return false;
+		}
+	}
+
+	return true;
+}
+```
