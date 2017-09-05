@@ -40,7 +40,11 @@ Inside the project, there is a **QueriesExample.txt**. If you want to modify the
 
 ## Code
 
-This project creates a custom *Table* object that uses a *DataTable* as a datastructure and has two additional functions: **CreateTable** and **Insert**.
+This project follows a Thread-safe Singleton design pattern, and also creates a custom *Table* object that uses a *DataTable* as a datastructure and has two additional functions: **CreateTable** and **Insert**.
+
+### Thread-safe Singleton
+
+The code for the *Database* object is the following:
 
 ### CreateTable
 
