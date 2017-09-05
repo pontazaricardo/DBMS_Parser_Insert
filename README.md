@@ -84,3 +84,7 @@ public bool CreateTable(string[] listOfNames, Type[] listOfTypes)
 }
 ```
 This function creates an instance of a *DataTable*, and creates, given the list of column names and types, the table, returning a **True** if it is successful or **False** otherwise.
+
+### Insert
+
+The code for this function is the following:
