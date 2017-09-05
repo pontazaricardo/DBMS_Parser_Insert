@@ -199,3 +199,7 @@ and this code returns a **True** if it is able to create a row in the associated
 To run some some **CREATE** and **INSERT** queries, just type them in the main window and hit the **Execute** button.
 
 ![demo02](/images/gif_02.gif)
+
+After running the queries successfully, you can see the created tables in the left side of the main form. By double-clicking them, you can open a second window which will display all the data inserted in the clicked table.
+
+![demo03](/images/gif_table.gif)
