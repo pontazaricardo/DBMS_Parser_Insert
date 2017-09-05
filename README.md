@@ -80,6 +80,10 @@ public sealed class Database
 	...
 }
 ```
+and you can instantiate it as
+```c#
+private static Database db = Database.GetInstance;
+```
 
 ### CreateTable
 
