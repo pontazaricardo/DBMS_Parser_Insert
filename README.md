@@ -40,7 +40,11 @@ Inside the project, there is a **QueriesExample.txt**. If you want to modify the
 
 ## Code
 
-This project creates a custom *Table* object that uses a *DataTable* as a datastructure and has two additional functions.
+This project creates a custom *Table* object that uses a *DataTable* as a datastructure and has two additional functions: **CreateTable** and **Insert**.
+
+### CreateTable
+
+The code for this function is the following:
 ```c#
 /// <summary>
 /// Creates a Table object based on the columns names and types. Returns true if the creation was successful and false if there is an error.
@@ -79,3 +83,4 @@ public bool CreateTable(string[] listOfNames, Type[] listOfTypes)
 	return true;
 }
 ```
+This function creates an instance of a *DataTable*, and creates, given the list of column names and types, the table, returning a **True** if it is successful or **False** otherwise.
