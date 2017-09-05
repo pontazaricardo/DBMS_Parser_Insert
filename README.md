@@ -197,3 +197,5 @@ and this code returns a **True** if it is able to create a row in the associated
 ## Execution
 
 To run some some **CREATE** and **INSERT** queries, just type them in the main window and hit the **Execute** button.
+
+![demo02](/images/gif_02.gif)
