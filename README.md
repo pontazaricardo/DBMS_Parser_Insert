@@ -33,3 +33,7 @@ INSERT INTO tweets VALUES (278146952,'wondering what big p','Sep 19 2007  2:58AM
 or just click the **Load sample queries** button to load a list of queries already preloaded in the project.
 
 ![demo01](/images/gif_01.gif)
+
+### Note
+
+Inside the project, there is a **QueriesExample.txt**.
