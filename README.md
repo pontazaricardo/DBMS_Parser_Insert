@@ -37,3 +37,9 @@ or just click the **Load sample queries** button to load a list of queries alrea
 ### Note
 
 Inside the project, there is a **QueriesExample.txt**. If you want to modify the **Load sample queries** button, just replace the queries in this file for your own ones.
+
+## Code
+
+This project creates a custom *Table* object that uses a *DataTable* as a datastructure and has two additional functions.
+
+
