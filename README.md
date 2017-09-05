@@ -203,3 +203,10 @@ To run some some **CREATE** and **INSERT** queries, just type them in the main w
 After running the queries successfully, you can see the created tables in the left side of the main form. By double-clicking them, you can open a second window which will display all the data inserted in the clicked table.
 
 ![demo03](/images/gif_table.gif)
+
+## Extensions
+
+There are two main areas where this project can be extended easily:
+1. At the moment the code only deals only with the **CREATE** and **INSERT** queries. A **SELECT** code can be easily implemented and the **TableForm.cs** class can be reused to display the results of the given **SELECT** query. (A *DataTable* is needed as input for the **TableForm.cs**).
+2. The *DataTable* objects can be easily saved to the file system and loaded every time the project is open.
+
