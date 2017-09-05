@@ -88,3 +88,64 @@ This function creates an instance of a *DataTable*, and creates, given the list 
 ### Insert
 
 The code for this function is the following:
+```c#
+/// <summary>
+/// Inserts the data in the given columns. Returns true if the data was inserted successfully and false otherwise.
+/// </summary>
+/// <param name="values"></param>
+/// <param name="columns"></param>
+/// <returns></returns>
+public bool Insert(List<string> values, List<string> columns = null)
+{
+	if((values == null) || (values.Count == 0))
+	{
+		return false;
+	}
+	if (columns!= null)
+	{
+		if(values.Count != columns.Count)
+		{
+			return false;
+		}
+	}
+	else
+	{
+		//columns == null
+		if(values.Count != table.Columns.Count)
+		{
+			return false;
+		}
+	}
+
+	//At this point we insert a new row
+	try
+	{
+		DataRow row = table.NewRow();
+
+		if (columns == null)
+		{
+			for (int i = 0; i < table.Columns.Count; i++)
+			{
+				row[table.Columns[i].ColumnName] = values[i];
+			}
+		}
+		else
+		{
+			for(int i = 0; i < columns.Count; i++)
+			{
+				row[columns[i]] = values[i];
+			}
+		}
+
+		table.Rows.Add(row);
+		table.AcceptChanges();
+
+	}
+	catch(Exception e)
+	{
+		return false;
+	}
+
+	return true;
+}
+```
