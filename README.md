@@ -79,6 +79,7 @@ public sealed class Database
 	
 	...
 }
+```
 
 ### CreateTable
 
