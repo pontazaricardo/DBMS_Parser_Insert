@@ -1,6 +1,6 @@
 # DBMS_Parser_Insert
 
-This is a DBMS project that creates DataTable objects based on standard SQL CREATE and INSERT queries.
+This is a DBMS project that creates DataTable objects based on standard SQL CREATE and INSERT queries. This DBMS follows a Thread-safe Singleton design pattern, so it can be used in multiple threads and they will all access the same Database object, allowing multiple inserts from different threads to the same table.
 
 ![demo00](/images/demo02.gif)
 
