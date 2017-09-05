@@ -45,6 +45,40 @@ This project follows a Thread-safe Singleton design pattern, and also creates a 
 ### Thread-safe Singleton
 
 The code for the *Database* object is the following:
+```c#
+public sealed class Database
+{
+	private static readonly object obj = new object();
+	private static Database instance = null;
+
+	/// <summary>
+	/// Instance of the Database. We use the Singleton design pattern in case the GUI runs in multiple threads.
+	/// </summary>
+	public static Database GetInstance
+	{
+		get
+		{
+			if (instance == null)
+			{
+				lock (obj)
+				{
+					if (instance == null)
+					{
+						instance = new Database();
+					}
+				}
+			}
+			return instance;
+		}
+	}
+
+	private Database()
+	{
+		...
+	}
+	
+	...
+}
 
 ### CreateTable
 
