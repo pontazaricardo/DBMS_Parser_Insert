@@ -192,3 +192,7 @@ public bool Insert(List<string> values, List<string> columns = null)
 	return true;
 }
 ```
+and this code returns a **True** if it is able to create a row in the associated *DataTable* with the given data or **False** in the case there is an error.
+
+## Execution
+
