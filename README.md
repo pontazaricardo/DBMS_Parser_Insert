@@ -2,6 +2,8 @@
 
 This is a DBMS project that creates DataTable objects based on standard SQL CREATE and INSERT queries.
 
+![demo00](/images/demo02.gif)
+
 ## Usage
 
 Just run the project in Visual Studio. The main form will then appear.
